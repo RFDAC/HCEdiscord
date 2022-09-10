@@ -1,0 +1,26 @@
+{=(builds):main swap1 swap2}                   
+{=(MAIN):sRcSSLMa}                      
+{=(SWAP1):PQbL9sp4}                      
+{=(SWAP2):HzrrG8if}                                          
+                                                                                
+{=(usage):use combo}                    
+{=(USE):tyeXvpDp}                       
+{=(COMBO):gVNSk8Ld}                     
+                                                                                
+{=(help):Follow the command to check the information for the build and some general usage tip. Type **!infoheal <command>** to get the information. For example **!infoheal main** to see main build                                                                                   
+                                        
+__**BUILD COMMANDs :**__                          
+> {join(`, `):`{builds}`}               
+                                        
+__**USAGE COMMANDs :**__                           
+> {replace(_, ):{join(`, `):`{usage}`}}}
+{=(sani):{join():{replace(-,):{replace(_,):{upper:{args}}}}}}                                                                                                                               
+                                        
+{=(output):{if({1}==):{help}|{if({in({sani}):{upper:{builds}}}==true):https://pastebin.com/{{upper:{builds({index({sani}):{replace({sani},. {sani} .):{upper:{builds}}}})}}}|{if({in({sani}):      {replace(_,):{upper:{usage}}}}==true):https://pastebin.com/{{replace(_,):{upper:{usage({index({sani}):{replace({sani},. {sani} .):{replace(_,):{upper:{usage}}}}})}}}}|{help}}}}}
+                                        
+{=(json1):"title":"HEALER BUILD INFO","description":"}
+{=(json2):","color":8311585}            
+                                        
+{override}                              
+{c:cembed {channel(id)} {if({in(pastebin):{output}}==true):{output}|{{json1}{output}{json2}}}}
+{blacklist( Please go to <#560921214965776408>):<#560921147965702146>}
